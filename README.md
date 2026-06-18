@@ -12,12 +12,13 @@ This project captures live webcam frames, detects a hand using MediaPipe, conver
 
 ## Project Structure
 
-- `app.py` - real-time webcam inference
-- `collect_data.py` - capture training samples for each sign
-- `train_model.py` - train the gesture classification model
-- `gesture_utils.py` - shared utilities for landmark extraction and drawing
-- `data/` - generated dataset CSV
-- `artifacts/` - saved model and label files
+app.py - real-time webcam inference using MediaPipe + trained model, converts hand gestures into text and speech
+collect_landmarks.py - captures hand landmark data using MediaPipe and saves them as .npy files for training
+train_model.py - trains a deep learning model on extracted hand landmark data and saves the trained model (.keras) and label mapping (.pkl)
+landmark_model.keras - trained Keras model used for gesture prediction
+labels.pkl - label mapping file for converting model outputs into readable gestures
+landmark_data/ - dataset directory containing saved landmark samples for each gesture class
+artifacts/ (optional if you used it elsewhere) - stores trained model files and supporting outputs
 
 ## Installation
 
